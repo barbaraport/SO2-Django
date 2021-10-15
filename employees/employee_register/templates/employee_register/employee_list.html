@@ -1,5 +1,22 @@
 {% extends "employee_register/base.html" %}
 
 {% block content %}
-<p>See all employees</p>
+<table class="table table-borderless">
+     <thead class="border-bottom font-weight-bold">
+          <tr>
+               <td>Nome completo</td>
+               <td>Telefone/Celular</td>
+               <td>Cargo</td>
+          </tr>
+     </thead>
+     <tbody>
+          {% for employee in employee_list %}
+               <tr>
+                    <td>{{employee.fullname}}</td>
+                    <td>{{employee.mobile}}</td>
+                    <td>{{employee.position}}</td>
+               </tr>
+          {% endfor %}
+     </tbody>
+</table>
 {% endblock content %}
